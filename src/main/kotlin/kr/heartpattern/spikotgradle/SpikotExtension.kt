@@ -9,5 +9,5 @@ fun Project.spikot(configuration: SpikotExtension.() -> Unit) {
 }
 
 open class SpikotExtension {
-    val output: String? = null
+    var output: String? = null
 }

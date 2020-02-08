@@ -24,6 +24,7 @@ val excludeSet = listOf(
     "com.github.salomonbrys.kotson" to "kotson"
 )
 
+@Suppress("UnstableApiUsage")
 class SpikotGradlePlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.buildscript.repositories.maven { config ->
@@ -32,8 +33,6 @@ class SpikotGradlePlugin : Plugin<Project> {
         project.repositories.maven { config ->
             config.url = URI("https://maven.heartpattern.kr/repository/maven-public/")
         }
-
-        val extension = project.extensions.create("spikot", SpikotExtension::class.java)
 
         project.plugins.apply("org.jetbrains.kotlin.jvm")
         project.plugins.apply("org.jetbrains.kotlin.kapt")
@@ -63,8 +62,9 @@ class SpikotGradlePlugin : Plugin<Project> {
 
             for ((group, module) in excludeSet)
                 shade.exclude(group, module)
+
             prj.tasks.create("createPlugin", Jar::class.java) { task ->
-                task.archiveFileName.set(extension.output ?: "${prj.name}-Plugin.jar")
+                task.archiveFileName.set("${prj.name}-Plugin.jar")
                 task.from(shade.map {
                     if (it.isDirectory)
                         it

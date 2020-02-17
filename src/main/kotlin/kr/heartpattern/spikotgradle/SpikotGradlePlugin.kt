@@ -3,6 +3,7 @@ package kr.heartpattern.spikotgradle
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.jvm.tasks.Jar
+import org.gradle.kotlin.dsl.add
 import org.gradle.kotlin.dsl.exclude
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.net.URI
@@ -39,8 +40,12 @@ class SpikotGradlePlugin : Plugin<Project> {
         project.plugins.apply("org.jetbrains.kotlin.plugin.serialization")
 
         with(project.dependencies) {
-            add("compileOnly", "kr.heartpattern:Spikot:4.0.0-SNAPSHOT")
-            add("compileOnly", "org.spigotmc:plugin-annotations:1.2.2-SNAPSHOT")
+            add("compileOnly", "kr.heartpattern:Spikot:4.0.0-SNAPSHOT"){
+                exclude("org.spigotmc","spigot-api")
+            }
+            add("compileOnly", "org.spigotmc:plugin-annotations:1.2.2-SNAPSHOT"){
+                exclude("org.bukkit","bukkit")
+            }
             add("kapt", "org.spigotmc:plugin-annotations:1.2.2-SNAPSHOT")
         }
 

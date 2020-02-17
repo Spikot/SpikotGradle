@@ -19,7 +19,7 @@ fun DependencyHandler.spigotApi(version: String) {
 
 fun DependencyHandler.paperApi(version: String) {
     val fullVersion = completeVersion(version)
-    add("compileOnly", "com.destroystokyo:$fullVersion")
+    add("compileOnly", "com.destroystokyo.paper:paper-api:$fullVersion")
 }
 
 private fun completeVersion(version: String): String {

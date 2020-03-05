@@ -22,6 +22,10 @@ fun DependencyHandler.paperApi(version: String) {
     add("compileOnly", "com.destroystokyo.paper:paper-api:$fullVersion")
 }
 
+fun DependencyHandler.spikot(version: String){
+    add("compileOnly", "kr.heartpattern:Spikot:$version")
+}
+
 private fun completeVersion(version: String): String {
     val regularized = if (version.endsWith("-SNAPSHOT"))
         version.substring(0..(version.length - 10))

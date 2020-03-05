@@ -40,9 +40,6 @@ class SpikotGradlePlugin : Plugin<Project> {
         project.plugins.apply("org.jetbrains.kotlin.plugin.serialization")
 
         with(project.dependencies) {
-            add("compileOnly", "kr.heartpattern:Spikot:4.0.0-SNAPSHOT"){
-                exclude("org.spigotmc","spigot-api")
-            }
             add("compileOnly", "org.spigotmc:plugin-annotations:1.2.2-SNAPSHOT"){
                 exclude("org.bukkit","bukkit")
             }

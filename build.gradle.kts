@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "kr.heartpattern"
-version = "4.0.4"
+version = "4.0.5"
 
 repositories {
     maven("https://maven.heartpattern.kr/repository/maven-public/")

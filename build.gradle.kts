@@ -1,17 +1,17 @@
 plugins {
-    kotlin("jvm").version("1.3.61")
+    kotlin("jvm").version("1.3.70")
     id("maven-publish")
     id("com.gradle.plugin-publish").version("0.10.1")
 }
 
 group = "kr.heartpattern"
-version = "4.0.5"
+version = "4.0.6"
 
 repositories {
     maven("https://maven.heartpattern.kr/repository/maven-public/")
 }
 
-val kotlinVersion = "1.3.61"
+val kotlinVersion = "1.3.70"
 
 dependencies {
     implementation(kotlin("stdlib", kotlinVersion))

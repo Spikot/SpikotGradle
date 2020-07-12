@@ -1,11 +1,11 @@
 plugins {
     kotlin("jvm").version("1.3.70")
     id("maven-publish")
-    id("com.gradle.plugin-publish").version("0.10.1")
+    id("com.gradle.plugin-publish").version("0.12.0")
 }
 
 group = "kr.heartpattern"
-version = "4.0.6"
+version = "4.0.7"
 
 repositories {
     maven("https://maven.heartpattern.kr/repository/maven-public/")

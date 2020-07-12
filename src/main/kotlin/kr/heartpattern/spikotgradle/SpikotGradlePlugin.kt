@@ -29,10 +29,10 @@ val excludeSet = listOf(
 class SpikotGradlePlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.buildscript.repositories.maven { config ->
-            config.url = URI("https://maven.heartpattern.kr/repository/maven-public/")
+            config.url = URI("https://maven.heartpattern.io/repository/maven-public/")
         }
         project.repositories.maven { config ->
-            config.url = URI("https://maven.heartpattern.kr/repository/maven-public/")
+            config.url = URI("https://maven.heartpattern.io/repository/maven-public/")
         }
 
         project.plugins.apply("org.jetbrains.kotlin.jvm")
